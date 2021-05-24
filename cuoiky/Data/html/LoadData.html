@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        var count = 1;
+
+        function DangKy() {
+            var a = document.getElementById("txtten").value;
+            var b = document.getElementById("txtstatus").value;
+            var c = document.getElementById("tg").value;
+
+            var tbl = document.getElementById("tb");
+            var h = tbl.insertRow(count);
+            var c0 = h.insertCell(0);
+            var c1 = h.insertCell(1);
+            var c2 = h.insertCell(2)
+            c0.innerHTML = a;
+            c1.innerHTML = b;
+            c2.innerHTML = c;
+            count++;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container" style="border: 1px solid black;">
+
+        <!-- Trigger the modal with a button -->
+        <h2>Modal Example</h2>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group">
+                            <label class="col-sm-3">ten</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="txtten" class="form-control">
+                            </div>
+
+                            <label class="col-sm-3">status</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="txtstatus" class="form-control">
+                            </div>
+
+                            <label class="col-sm-3">thoi gian</label>
+                            <div class="col-sm-9">
+                                <input type="date" id="tg" class="form-control">
+                            </div>
+
+                        </form>
+                        <div class="col-sm-12">
+                            <input type="button" class="btn btn-default" id="btnClick" onClick="DangKy()" value="Them">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <table class="table table-striped" id="tb">
+                <thead>
+                    <tr>
+                        <td>ten</td>
+                        <td>status</td>
+                        <td>thoi gian</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

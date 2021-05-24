@@ -12,6 +12,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function DangKy() {
+            var a = document.getElementById("maTour").value;
+            var b = document.getElementById("hanhTrinh").value;
+            var c = document.getElementById("ngayKhoiHanh").value;
+            var d = document.getElementById("thoiGian").value;
+            var e = document.getElementById("giaTour").value;
+            var f = document.getElementById("anhDaiDien").value;
+
+            var b = document.getElementById("tblInfo");
+            var h = b.insertRow(count);
+            var c0 = h.insertCell(0);
+            var c1 = h.insertCell(1);
+            var c2 = h.insertCell(2);
+            var c3 = h.insertCell(3);
+            var c4 = h.insertCell(4);
+            var c5 = h.insertCell(5);
+
+            c0.innerHTML = a;
+            c1.innerHTML = b;
+            c2.innerHTML = c;
+            c3.innerHTML = d;
+            c4.innerHTML = e;
+            c5.innerHTML = f;
+            count++;
+
+        }
+    </script>
 </head>
 
 <body>
@@ -38,10 +67,55 @@
                                 <h4 class="modal-title">Modal Header</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Some text in the modal.</p>
+                                <div id="frmdk" class="horizontal-form">
+                                    <div class="form-group">
+                                        <label class="col-sm-3">Ma tour</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="maTour">
+                                            <br>
+                                            <span style="color:red">(*)</span>
+                                        </div>
+
+                                        <label class="col-sm-3">Hanh Trinh</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="hanhTrinh">
+                                            <br>
+                                            <span style="color:red">(*)</span>
+                                        </div>
+
+                                        <label class="col-sm-3">Ngay khoi hanh</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" class="form-control" id="ngayKhoiHanh">
+                                            <br>
+                                            <span style="color:red">(*)</span>
+                                        </div>
+
+                                        <label class="col-sm-3">Thoi gian</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="thoiGian">
+                                            <br>
+                                            <span style="color:red">(*)</span>
+                                        </div>
+
+                                        <label class="col-sm-3">Gia Tour</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="giaTour">
+                                            <br>
+                                            <span style="color:red">(*)</span>
+                                        </div>
+
+                                        <label class="col-sm-3">Anh dai dien</label>
+                                        <div class="col-sm-9">
+
+                                            <input type="file" class="form-control" id="anhDaiDien" <br>
+                                            <span style="color:red">(*)</span>
+                                        </div>
+                                        <div class="col-sm-12 form-control btn btn-success" onclick="DangKy()"></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success form-control" data-dismiss="modal">Close</button>
                             </div>
                         </div>
 
@@ -54,7 +128,7 @@
             <div class="col-sm-12 " style="text-align: center;">Danh sách TOUR - Du lịch việt</div>
         </div>
         <div class="row">
-            <table class="table table-striped">
+            <table class="table table-striped" id="tblInfo">
                 <thead>
                     <tr>
                         <td>STT</td>
